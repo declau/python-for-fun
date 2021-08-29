@@ -4,7 +4,7 @@ tentativa = 1
 
 while total_tentativas >= tentativa:
 
-    print("Tentativa", tentativa, "de", total_tentativas)
+    print(f"Tentativa {tentativa} de {total_tentativas}")
 
     chute_str = input("Qual seu número: ")
     print("Você digitou ", chute_str)
