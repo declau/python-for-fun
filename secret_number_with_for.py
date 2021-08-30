@@ -1,6 +1,6 @@
 import random
 
-numero_secreto = int(random.random() * 30)
+numero_secreto = random.randrange(1, 31)
 
 total_tentativas = 3
 
