@@ -1,7 +1,7 @@
 import random
 
 numero_secreto = int(random.random() * 30)
-print(numero_secreto)
+
 total_tentativas = 3
 
 for tentativa in range(1, total_tentativas + 1):
