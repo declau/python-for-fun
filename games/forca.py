@@ -30,6 +30,7 @@ def jogar():
                 index += 1
         else:
             erros = erros - 1
+            print(f"Ops, você errou! Faltam {erros}")
 
         enforcou = erros == 0
         acertou = "_" not in letras_acertadas
