@@ -14,7 +14,7 @@ def jogar():
     ]
     enforcou = False
     acertou = False
-    erros = 0
+    erros = len(letras_acertadas)
 
     print(letras_acertadas)
 
@@ -29,9 +29,9 @@ def jogar():
                     letras_acertadas[index] = letra
                 index += 1
         else:
-            erros += 1
+            erros = erros - 1
 
-        enforcou = erros == len(palavra_secreta)
+        enforcou = erros == 0
         acertou = "_" not in letras_acertadas
         print(letras_acertadas)
     if acertou:
