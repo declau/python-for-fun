@@ -11,7 +11,7 @@ def jogar():
 
     enforcou = False
     acertou = False
-    erros = len(letras_acertadas)
+    erros = 0
 
     print(letras_acertadas)
 
@@ -22,16 +22,16 @@ def jogar():
         if chute in palavra_secreta:
             forca.marca_chute_correto(chute, letras_acertadas, palavra_secreta)
         else:
-            erros = erros - 1
-            print(f"Ops, você errou! Faltam {erros}")
+            erros += 1
+            forca.desenha_forca(erros)
 
-        enforcou = erros == 0
+        enforcou = erros == 7
         acertou = "_" not in letras_acertadas
         print(letras_acertadas)
     if acertou:
         forca.imprime_mensagem_vencedor()
     else:
-        forca.imprime_mensagem_perdedor()
+        forca.imprime_mensagem_perdedor(palavra_secreta)
 
     print("Fim do jogo")
 
