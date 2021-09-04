@@ -20,11 +20,7 @@ def jogar():
         chute = chute.strip().upper()
 
         if chute in palavra_secreta:
-            index = 0
-            for letra in palavra_secreta:
-                if chute == letra:
-                    letras_acertadas[index] = letra
-                index += 1
+            forca.marca_chute_correto(chute, letras_acertadas, palavra_secreta)
         else:
             erros = erros - 1
             print(f"Ops, você errou! Faltam {erros}")
@@ -33,9 +29,9 @@ def jogar():
         acertou = "_" not in letras_acertadas
         print(letras_acertadas)
     if acertou:
-        print("Você Ganhou")
+        forca.imprime_mensagem_vencedor()
     else:
-        print("Você Perdeu")
+        forca.imprime_mensagem_perdedor()
 
     print("Fim do jogo")
 

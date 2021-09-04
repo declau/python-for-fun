@@ -23,3 +23,19 @@ def carrega_palavra_secreta():
 
 def inicializa_letras_acertadas(palavra_secreta):
     return ["_" for letra in palavra_secreta]
+
+
+def marca_chute_correto(chute, letras_acertadas, palavra_secreta):
+    index = 0
+    for letra in palavra_secreta:
+        if chute == letra:
+            letras_acertadas[index] = letra
+        index += 1
+
+
+def imprime_mensagem_vencedor():
+    print("Você Ganhou!!!!")
+
+
+def imprime_mensagem_perdedor():
+    print("Você Perdeu!!!!")
