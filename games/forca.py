@@ -5,7 +5,9 @@ def jogar():
 
     forca.mensagem_abertura()
 
-    palavra_secreta = forca.carrega_palavra_secreta()
+    palavra_secreta = forca.carrega_palavra_secreta(
+        nome_arquivo="palavras.txt", primeira_linha_valida=3
+    )
 
     letras_acertadas = forca.inicializa_letras_acertadas(palavra_secreta)
 

@@ -7,15 +7,15 @@ def mensagem_abertura():
     print("*********************************")
 
 
-def carrega_palavra_secreta():
-    with open("palavras.txt", "r") as arquivo:
+def carrega_palavra_secreta(nome_arquivo="palavras.txt", primeira_linha_valida=0):
+    with open(nome_arquivo, "r") as arquivo:
         palavras = []
 
         for linha in arquivo:
             linha = linha.strip()
             palavras.append(linha)
 
-    posicao = random.randrange(0, len(palavras))
+    posicao = random.randrange(primeira_linha_valida, len(palavras))
     palavra_secreta = palavras[posicao].upper()
 
     return palavra_secreta
