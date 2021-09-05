@@ -16,7 +16,9 @@ def escolhe_arquivo(palavra):
     if palavra == 1:
         nome_arquivo = "nomes.txt"
     elif palavra == 2:
-        nome_arquivo = "palavras.txt"
+        nome_arquivo = "frutas.txt"
+    elif palavra == 3:
+        nome_arquivo = "random.txt"
     else:
         return print("Escolha não válida!!!")
 
