@@ -12,6 +12,17 @@ def defina_tipo_palavra():
     return palavra
 
 
+def escolhe_arquivo(palavra):
+    if palavra == 1:
+        nome_arquivo = "nomes.txt"
+    elif palavra == 2:
+        nome_arquivo = "palavras.txt"
+    else:
+        return print("Escolha não válida!!!")
+
+    return nome_arquivo
+
+
 def carrega_palavra_secreta(nome_arquivo, primeira_linha_valida=0):
     with open(nome_arquivo, "r") as arquivo:
         palavras = []

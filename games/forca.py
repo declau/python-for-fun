@@ -10,13 +10,7 @@ def jogar():
 
     palavra = forca.defina_tipo_palavra()
 
-    if palavra == 1:
-        nome_arquivo = "nomes.txt"
-    elif palavra == 2:
-        nome_arquivo = "palavras.txt"
-    else:
-        print("Escolha não válida!!!")
-        return
+    nome_arquivo = forca.escolhe_arquivo(palavra)
 
     palavra_secreta = forca.carrega_palavra_secreta(
         nome_arquivo=nome_arquivo, primeira_linha_valida=3
