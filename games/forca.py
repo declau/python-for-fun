@@ -5,8 +5,21 @@ def jogar():
 
     forca.mensagem_abertura()
 
+    print("Qual o tipo de palavra?")
+    print("(1) Nomes (2) Frutas")
+
+    palavra = forca.defina_tipo_palavra()
+
+    if palavra == 1:
+        nome_arquivo = "nomes.txt"
+    elif palavra == 2:
+        nome_arquivo = "palavras.txt"
+    else:
+        print("Escolha não válida!!!")
+        return
+
     palavra_secreta = forca.carrega_palavra_secreta(
-        nome_arquivo="palavras.txt", primeira_linha_valida=3
+        nome_arquivo=nome_arquivo, primeira_linha_valida=3
     )
 
     letras_acertadas = forca.inicializa_letras_acertadas(palavra_secreta)

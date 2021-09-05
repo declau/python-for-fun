@@ -7,7 +7,12 @@ def mensagem_abertura():
     print("*********************************")
 
 
-def carrega_palavra_secreta(nome_arquivo="palavras.txt", primeira_linha_valida=0):
+def defina_tipo_palavra():
+    palavra = int(input("Defina o tipo de palavra: "))
+    return palavra
+
+
+def carrega_palavra_secreta(nome_arquivo, primeira_linha_valida=0):
     with open(nome_arquivo, "r") as arquivo:
         palavras = []
 
