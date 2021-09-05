@@ -13,16 +13,18 @@ def defina_tipo_palavra():
 
 
 def escolhe_arquivo(palavra):
-    if palavra == 1:
-        nome_arquivo = "nomes.txt"
-    elif palavra == 2:
-        nome_arquivo = "frutas.txt"
-    elif palavra == 3:
-        nome_arquivo = "random.txt"
-    else:
-        return print("Escolha não válida!!!")
 
-    return nome_arquivo
+    try:
+        if palavra == 1:
+            nome_arquivo = "nomes.txt"
+        if palavra == 2:
+            nome_arquivo = "frutas.txt"
+        if palavra == 3:
+            nome_arquivo = "random.txt"
+
+        return nome_arquivo
+    except:
+        raise Exception("Opção inválida!!!")
 
 
 def carrega_palavra_secreta(nome_arquivo, primeira_linha_valida=0):
