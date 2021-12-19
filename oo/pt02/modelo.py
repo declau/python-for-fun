@@ -1,6 +1,6 @@
 class Programa:
     def __init__(self, nome, ano,):
-        self._nome = nome
+        self._nome = nome.title()
         self.ano = ano
         self._likes = 0
 
@@ -19,35 +19,53 @@ class Programa:
     def nome(self, novo_nome):
          self._nome = novo_nome
 
-    def imprime(self):
-        print(f"{self._nome} - {self.ano} - {self._likes} Likes")
+    def __str__(self):
+        return f"{self._nome} - {self.ano} - {self._likes} Likes"
 
 class Filme(Programa):
     def __init__(self, nome, ano, duracao):
         super().__init__(nome, ano)
         self.duracao = duracao
     
-    def imprime(self):
-        print(f"{self._nome} - {self.ano} - {self.duracao} Min - {self._likes} Likes")
+    def __str__(self):
+        return f"{self._nome} - {self.ano} - {self.duracao} Min - {self._likes} Likes"
 
 class Serie(Programa):
     def __init__(self, nome, ano, temporadas):
         super().__init__(nome, ano)
         self.temporadas = temporadas
     
-    def imprime(self):
-        print(f"{self._nome} - {self.ano} - {self.temporadas} Temporadas - {self._likes} Likes")
+    def __str__(self):
+         return f"{self._nome} - {self.ano} - {self.temporadas} Temporadas - {self._likes} Likes"
     
+class Playlist:
+    def __init__(self, nome, programas):
+        self.nome = nome.title()
+        self.programas = programas
+
+    def tamanho(self):
+        return len(self.programas)
+         
+
 vingadores = Filme("vingadores - guerra infinita", 2018, 160)
-vingadores.dar_like()
-
-        
+mad_max = Filme("mad max - estrada da furia", 2016, 185)
 atlanta = Serie("atlanta", 2019, 2)
+justiceiro = Serie("justiceiro", 2019, 2)
+
+vingadores.dar_like()
 atlanta.dar_like()
 atlanta.dar_like()
+atlanta.dar_like()
+mad_max.dar_like()
+mad_max.dar_like()
+mad_max.dar_like()
+mad_max.dar_like()
+justiceiro.dar_like()
 
 
-filmes_series = [vingadores, atlanta]
+filmes_series = [vingadores, mad_max, atlanta, justiceiro]
+playlist_fim_semana = Playlist("playlist fim de semana", filmes_series)
 
-for programa in filmes_series:
-    programa.imprime()
+for programa in playlist_fim_semana.programas:
+    print(programa)
+print( f"Quantidade de Filmes ou Series: {playlist_fim_semana.tamanho()}")
