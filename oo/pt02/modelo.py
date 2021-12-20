@@ -43,14 +43,15 @@ class Playlist:
         self.nome = nome.title()
         self._programas = programas
 
+    def __getitem__(self, item): #um metodo que define que alguem é iteravel (ou seja a clase tem um list).
+        return self._programas[item]
+
     @property
     def listagem(self):
         return self._programas
     
-    @property
-    def tamanho(self):
+    def __len__(self):
         return len(self._programas)
-
 
 vingadores = Filme("vingadores - guerra infinita", 2018, 160)
 mad_max = Filme("mad max - estrada da furia", 2016, 185)
@@ -71,8 +72,8 @@ justiceiro.dar_like()
 filmes_series = [vingadores, mad_max, atlanta, justiceiro]
 playlist_fim_semana = Playlist("playlist fim de semana", filmes_series)
 
-print( f"Quantidade de Filmes ou Series: {len(playlist_fim_semana.listagem)}")
-for programa in playlist_fim_semana.listagem:
+print( f"Quantidade de Filmes ou Series: {len(playlist_fim_semana)}")
+for programa in playlist_fim_semana:
     print(programa)
 
-print(f"Faz parte da Playlist? {justiceiro in playlist_fim_semana.listagem}")
+print(f"Faz parte da Playlist? {justiceiro in playlist_fim_semana}")
